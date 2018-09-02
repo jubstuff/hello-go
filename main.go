@@ -59,6 +59,20 @@ func simpleMath() {
 	fmt.Printf("%d / %d = %d\n", firstNumber, secondNumber, firstNumber/secondNumber)
 }
 
+func areaRectangularRoom() {
+	const ConversionFactor = 0.092903
+
+	length := utils.GetNumber("What is the length of the room in feet?")
+	width := utils.GetNumber("What is the width of the room in feet?")
+
+	areaFeet := float64(length) * float64(width)
+	areaMeters := float64(areaFeet) * ConversionFactor
+
+	fmt.Printf("You entered dimension of %d feet by %d feet\n", length, width)
+	fmt.Printf("The area is %f square feet\n", areaFeet)
+	fmt.Printf("That are %f square meters\n", areaMeters)
+}
+
 func menu() {
 	fmt.Println("Learning Go")
 	fmt.Println("0. Exit")
@@ -87,6 +101,8 @@ func main() {
 		madLib()
 	case 5:
 		simpleMath()
+	case 6:
+		areaRectangularRoom()
 	default:
 		fmt.Println("Bye Bye")
 	}
